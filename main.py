@@ -1,12 +1,17 @@
+import json
+import funcoes
+
 repita = True
 
 while repita :
+
+    with open("palavras.json", "r", encoding="utf-8") as json_file :
+        dicionario = json.load(json_file)
 
     valido = True
     tentativas = 5
     acertos = []
 
-    # Será usado futuramente para a inserção de dificuldades, visando o sorteio de palavras.
     dificuldade = input('Em qual dificuldade você quer jogar?\n'
                         'Digite "1" para infantil\n'
                         'Digite "2" para fácil\n'
@@ -30,7 +35,7 @@ while repita :
     while valido :
             
         print(f'Você jogará no modo: {dificuldade}\n')
-        palavra = input("Escolha a palavra: ").upper() # Irá sair futuramente, o intuito é o próprio programa selecionar uma palavra aleatória baseada na dificuldade escolhida
+        palavra = funcoes.escolherPalavra(dificuldade, dicionario).upper()
 
         for letra in range(0, len(palavra)) :
             acertos.append("_")
@@ -46,13 +51,15 @@ while repita :
                 tentativas -= 1
 
                 if tentativas == 0 :
-                    print("Fim de jogo, suas tentativas acabaram.")
+                    print("Fim de jogo, suas tentativas acabaram.\n"
+                          f"A palavra correta era {palavra}")
                 elif tentativas == 1 :
                     print("Esta é a sua última tentativa!")
                 else : 
                     print(f"Você errou, restam {tentativas} tentativas")
             if "".join(acertos) == palavra :
                 print("\nParabéns! Você venceu o jogo!\n")
+                print(acertos)
                 break    
             print(acertos)
         

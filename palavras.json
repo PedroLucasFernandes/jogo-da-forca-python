@@ -1,0 +1,20 @@
+{
+    "infantil" : ["Casa", "Sol", "Bola", "Cão", "Flor", "Amigo",
+"Arco-íris", "Doce", "Gato", "Rio", "Lua", "Árvore", "Pato",
+"Peixe", "Nuvem", "Rosa", "Riso", "Chuva", "Pássaro", "Estrela"],
+
+    "fácil" : ["Amarelo", "Amiga", "Amor", "Ave", "Avião", "Avó", "Balão", "Bebê",
+"Bolo", "Branco", "Cama", "Caneca", "Celular", "Céu", "Clube", "Copo", "Doce",
+"Elefante", "Escola", "Estojo", "Faca", "Foto", "Garfo", "Geleia", "Girafa", "Janela",
+"Limonada", "Mãe", "Meia", "Noite", "Óculos", "Ônibus", "Ovo", "Pai", "Pão", "Parque",
+"Passarinho", "Peixe", "Pijama", "Rato", "Umbigo"],
+
+    "difícil" : ["Acender", "Afilhado", "Agnóstico", "Ardiloso", "Áspero", "Assombração", "Asterisco", "Basquete",
+"Caminho", "Champanhe", "Chiclete", "Chuveiro", "Coelho", "Contexto", "Convivência", "Coração", "Desalmado",
+"Eloquente", "Esfirra", "Esquerdo", "Exceção", "Filantropo", "Fugaz", "Gororoba", "Horrorizado", "Impacto",
+"Independência", "Modernidade", "Oftalmologista", "Otorrinolaringologista", "Paralelepípedo"],
+
+    "inglês" : ["Cat", "Dog", "Sun", "Moon", "Fish", "Tree", "Rain", "Star", "Bird",
+"Bear", "House", "Car", "Book", "Cake", "Apple", "Ship", "Mouse", "Lion", "Tiger",
+"Elephant", "Banana", "Monkey", "Rainbow", "Butterfly", "Carrot", "Dolphin", "Giraffe","Kangaroo"]
+}
