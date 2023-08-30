@@ -9,7 +9,7 @@ while repita :
         dicionario = json.load(json_file)
 
     valido = True
-    tentativas = 5
+    tentativas = 6
     acertos = []
 
     dificuldade = input('Em qual dificuldade você quer jogar?\n'
@@ -42,7 +42,8 @@ while repita :
             print(acertos[letra], end = " ")
 
         while tentativas > 0 :
-            letra = input("\nInsira uma letra: ").upper()
+            letra = funcoes.receberLetra()
+            
             if letra in palavra :
                 for l in range(0, len(palavra)) :
                     if letra == palavra[l] :
@@ -57,6 +58,7 @@ while repita :
                     print("Esta é a sua última tentativa!")
                 else : 
                     print(f"Você errou, restam {tentativas} tentativas")
+
             if "".join(acertos) == palavra :
                 print("\nParabéns! Você venceu o jogo!\n")
                 print(acertos)
@@ -65,7 +67,7 @@ while repita :
         
         valido = False
         print("Deseja jogar mais uma vez?")
-        resposta = input('Digite "s" para SIM ou qualquer outro valor para NÃO:\n')
+        resposta = input('Digite "s" para SIM ou qualquer outro valor para NÃO:\n').lower()
         repita = True if resposta == "s" else False
 
 print("Obrigado por jogar, até mais!")
