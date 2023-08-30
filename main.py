@@ -29,7 +29,7 @@ while repita :
         case "4" : dificuldade = "inglês"
 
         case _:
-            print("Valor inválido, insira um número correspondente: ")
+            print(f"\n{funcoes.cor[0]}Valor inválido, insira um número correspondente: {funcoes.cor[-1]}")
             valido = False
 
     while valido :
@@ -45,29 +45,19 @@ while repita :
             letra = funcoes.receberLetra()
             
             if letra in palavra :
-                for l in range(0, len(palavra)) :
-                    if letra == palavra[l] :
-                        acertos[l] = letra
+               funcoes.letraCerta(palavra, letra, acertos)
+
             else :
                 tentativas -= 1
-
-                if tentativas == 0 :
-                    print("Fim de jogo, suas tentativas acabaram.\n"
-                          f"A palavra correta era {palavra}")
-                elif tentativas == 1 :
-                    print("Esta é a sua última tentativa!")
-                else : 
-                    print(f"Você errou, restam {tentativas} tentativas")
+                funcoes.letraErrada(tentativas, palavra)
 
             if "".join(acertos) == palavra :
-                print("\nParabéns! Você venceu o jogo!\n")
+                print(f"{funcoes.cor[1]}\nParabéns! Você venceu o jogo!\n{funcoes.cor[-1]}")
                 print(acertos)
                 break    
             print(acertos)
         
         valido = False
-        print("Deseja jogar mais uma vez?")
-        resposta = input('Digite "s" para SIM ou qualquer outro valor para NÃO:\n').lower()
-        repita = True if resposta == "s" else False
+        repita = funcoes.jogarNovamente()
 
 print("Obrigado por jogar, até mais!")
