@@ -9,27 +9,6 @@ Pedro Lucas Fernandes Ferreira
 ## Proposta
 Programar um Jogo da Forca funcional e intuitivo, com o objetivo educativo de colocar em prática meus conhecimentos de Programação em Python.
 
-## Como foi desenvolvido
-Utilizei o Python como principal linguagem para o projeto, por meio do editor de código Visual Studio Code.
-
-Arquivos necessários para o desenvolvimento do programa:
-```bash
-funcoes.py1
-main.py
-palavras.json
-```
-
-O ``main.py`` é responsável pela execução do programa, e ``funcoes.py`` armazena as funções para uma melhor organização e otimização do código.
-
-``palavras.json`` é o arquivo que contém o nosso dicionário, com todas as palavras possíveis para a partida, basicamente o dicionário é feito utilizando quatro keys, onde cada uma representa um modo de jogo (infantil, fácil, difícil, inglês), inseri uma lista de palavras para ser o valor de cada key.
-
-### Explicando as funções
-Até então existem cinco funções para ajudar no processamento do jogo, e elas contêm um nome bem autoexplicativo para facilitar o entendimento. ``escolherPalavra(dificuldade, dicionario)`` irá acessar o dicionário em ``palavras.json`` e acessa a key correspondente a dificuldade fornecida pelo usuário, depois seleciona uma palavra aleatória que representa aquele modo.
-
-``receberLetra()``, ``letraCerta(palavra, letra, acertos)`` e ``letraErrada(tentativas, palavra)`` são responsáveis pelo recebimento da tentativa do usuário e por todo o processamento. Faz parte do processamento: a verificação da letra inserida pelo jogador e a resposta do programa conforme o resultado, indicando se ele acertou ou não essa letra, e claro, retirando uma tentativa (vida) em caso de erro.
-
-Por fim, ``jogarNovamente()`` será executado ao final de cada partida, perguntando ao usuário se ele pretende jogar mais uma vez, em caso de afirmação, o programa retorna ao menu inicial para que possa ser selecionado um modo, não será obrigatório repitir a dificuldade jogada anteriormente. Em caso de negação, o aplicativo será finalizado com a frase "Obrigado por jogar, até mais!.
-
 ## Como utilizar o sistema
 Abra o terminal na pasta onde os arquivos se encontram e utilize o comando ``python main.py``. Após isso a aplicação já estará em funcionamento.
 
@@ -55,3 +34,24 @@ Independente do seu resultado, temos a pergunta para jogar novamente, responda c
 
 Também colori palavras/frases em alguns prints para uma melhor qualidade e ilustração no jogo.
 ![exemplo de partida vencida](https://i.imgur.com/jgRC5LF.png)
+
+## Como foi desenvolvido
+Utilizei o Python como principal linguagem para o projeto, por meio do editor de código Visual Studio Code.
+
+Arquivos necessários para o desenvolvimento do programa:
+```bash
+funcoes.py1
+main.py
+palavras.json
+```
+
+O ``main.py`` é responsável pela execução do programa, e ``funcoes.py`` armazena as funções para uma melhor organização e otimização do código.
+
+``palavras.json`` é o arquivo que contém o nosso dicionário, com todas as palavras possíveis para a partida, basicamente o dicionário é feito utilizando quatro keys, onde cada uma representa um modo de jogo (infantil, fácil, difícil, inglês), inseri uma lista de palavras para ser o valor de cada key.
+
+### Explicando as funções
+Até então existem cinco funções para ajudar no processamento do jogo, e elas contêm um nome bem autoexplicativo para facilitar o entendimento. ``escolherPalavra(dificuldade, dicionario)`` irá acessar o dicionário em ``palavras.json`` e acessa a key correspondente a dificuldade fornecida pelo usuário, depois seleciona uma palavra aleatória que representa aquele modo.
+
+``receberLetra()``, ``letraCerta(palavra, letra, acertos)`` e ``letraErrada(tentativas, palavra)`` são responsáveis pelo recebimento da tentativa do usuário e por todo o processamento. Faz parte do processamento: a verificação da letra inserida pelo jogador e a resposta do programa conforme o resultado, indicando se ele acertou ou não essa letra, e claro, retirando uma tentativa (vida) em caso de erro.
+
+Por fim, ``jogarNovamente()`` será executado ao final de cada partida, perguntando ao usuário se ele pretende jogar mais uma vez, em caso de afirmação, o programa retorna ao menu inicial para que possa ser selecionado um modo, não será obrigatório repitir a dificuldade jogada anteriormente. Em caso de negação, o aplicativo será finalizado com a frase "Obrigado por jogar, até mais!.
