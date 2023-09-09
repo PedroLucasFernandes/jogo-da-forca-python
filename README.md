@@ -40,7 +40,7 @@ Utilizei o Python como principal linguagem para o projeto, por meio do editor de
 
 Arquivos necessários para o desenvolvimento do programa:
 ```bash
-funcoes.py1
+funcoes.py
 main.py
 palavras.json
 ```
