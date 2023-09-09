@@ -8,6 +8,20 @@ def escolherPalavra(dificuldade, dicionario) :
     num = random.randint(0, len(lista) - 1)
     return lista[num]
 
+def removerAcentos(letra):
+    acentos = {
+        'á': 'a', 'é': 'e', 'í': 'i', 'ó': 'o', 'ú': 'u',
+        'â': 'a', 'ê': 'e', 'ô': 'o', 'à': 'a',
+        'ã': 'a', 'õ': 'o',
+        'ç': 'c'
+    }
+    
+    for item in acentos.keys():
+        
+        if item.upper() == letra : letra = acentos[item].upper()
+    
+    return letra
+
 def receberLetra() :
     while True :
         letra = input("\nInsira uma letra: ").upper()
@@ -20,14 +34,25 @@ def letraCerta(palavra, letra, acertos) :
         if letra == palavra[l] :
             acertos[l] = letra
 
-def letraErrada(tentativas, palavra) :
+def letraErrada(tentativas, palavraSecreta) :
     if tentativas == 0 :
         print(f"\n{cor[0]}Fim de jogo, suas tentativas acabaram.\n{cor[-1]}"
-                f"A palavra correta era {palavra}\n")
+                f"A palavra correta era {palavraSecreta}\n")
     elif tentativas == 1 :
         print("Esta é a sua última tentativa!")
     else : 
         print(f"Você errou, restam {tentativas} tentativas")
+
+def exibirPalavra(palavraSecreta, palavra, acertos) :
+    aux = []    
+    
+    for i, letra in enumerate(palavra) :
+        if letra == acertos[i] :
+            aux.append(palavraSecreta[i])
+        else :
+            aux.append("_")
+    
+    print(aux)
 
 def jogarNovamente() :
     print("\nDeseja jogar mais uma vez?")

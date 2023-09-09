@@ -1,5 +1,6 @@
 import json
 import funcoes
+import os
 
 repita = True
 
@@ -11,6 +12,8 @@ while repita :
     valido = True
     tentativas = 6
     acertos = []
+
+    os.system("cls")
 
     dificuldade = input('Em qual dificuldade você quer jogar?\n'
                         'Digite "1" para infantil\n'
@@ -35,27 +38,28 @@ while repita :
     while valido :
             
         print(f'Você jogará no modo: {dificuldade}\n')
-        palavra = funcoes.escolherPalavra(dificuldade, dicionario).upper()
+        palavraSecreta = funcoes.escolherPalavra(dificuldade, dicionario).upper()
+        palavra = list(map(funcoes.removerAcentos, palavraSecreta))
 
         for letra in range(0, len(palavra)) :
             acertos.append("_")
             print(acertos[letra], end = " ")
 
         while tentativas > 0 :
-            letra = funcoes.receberLetra()
+            letra = funcoes.removerAcentos(funcoes.receberLetra())
             
             if letra in palavra :
                funcoes.letraCerta(palavra, letra, acertos)
 
             else :
                 tentativas -= 1
-                funcoes.letraErrada(tentativas, palavra)
-
-            if "".join(acertos) == palavra :
+                funcoes.letraErrada(tentativas, palavraSecreta)
+            
+            if acertos == palavra :
                 print(f"{funcoes.cor[1]}\nParabéns! Você venceu o jogo!\n{funcoes.cor[-1]}")
                 print(acertos)
                 break    
-            print(acertos)
+            funcoes.exibirPalavra(palavraSecreta, palavra, acertos)
         
         valido = False
         repita = funcoes.jogarNovamente()
