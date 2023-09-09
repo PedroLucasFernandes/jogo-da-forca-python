@@ -18,7 +18,7 @@ Com isso, uma série de dificuldades aparecerão na tela, digite o número corre
 - 'Digite "3" para difícil'
 - 'Digite "4" para inglês (básico)'
 
-Caso a sua resposta não seja nenhum dos números previstos, uma mensagem de valor inválido aparecerá, junto das instruções novamente.
+Caso a sua resposta não seja nenhum dos números previstos, uma mensagem de valor inválido aparecerá, junto das instruções novamente. <br>
 ![Exemplo de valor inválido](https://i.imgur.com/yStVuDV.png)
 
 Após inserir um valor válido, o programa irá imprimir um "_" para cada letra presente na palavra, e logo te pedirá para inserir uma letra.
@@ -50,8 +50,12 @@ O ``main.py`` é responsável pela execução do programa, e ``funcoes.py`` arma
 ``palavras.json`` é o arquivo que contém o nosso dicionário, com todas as palavras possíveis para a partida, basicamente o dicionário é feito utilizando quatro keys, onde cada uma representa um modo de jogo (infantil, fácil, difícil, inglês), inseri uma lista de palavras para ser o valor de cada key.
 
 ### Explicando as funções
-Até então existem cinco funções para ajudar no processamento do jogo, e elas contêm um nome bem autoexplicativo para facilitar o entendimento. ``escolherPalavra(dificuldade, dicionario)`` irá acessar o dicionário em ``palavras.json`` e acessa a key correspondente a dificuldade fornecida pelo usuário, depois seleciona uma palavra aleatória que representa aquele modo.
+Até então existem sete funções para ajudar no processamento do jogo, e elas contêm um nome bem autoexplicativo para facilitar o entendimento. ``escolherPalavra(dificuldade, dicionario)`` irá acessar o dicionário em ``palavras.json`` e acessa a key correspondente a dificuldade fornecida pelo usuário, depois seleciona uma palavra aleatória que representa aquele modo.
 
-``receberLetra()``, ``letraCerta(palavra, letra, acertos)`` e ``letraErrada(tentativas, palavra)`` são responsáveis pelo recebimento da tentativa do usuário e por todo o processamento. Faz parte do processamento: a verificação da letra inserida pelo jogador e a resposta do programa conforme o resultado, indicando se ele acertou ou não essa letra, e claro, retirando uma tentativa (vida) em caso de erro.
+Para desconsiderar acentos utilizamos ``removerAcentos(letra)``. Por exemplo, se a palavra secreta for "ÓCULOS" e o jogador inserir a letra "O", o programa naturalmente não iria reconhecer o "Ó", dificultando na adivinhação e tornando a partida inviável, por isso utilizamos essa função.
+
+``receberLetra()``, ``letraCerta(palavra, letra, acertos)`` e ``letraErrada(tentativas, palavraSecreta)`` são responsáveis pelo recebimento da tentativa do usuário e por todo o processamento. Faz parte do processamento: a verificação da letra inserida pelo jogador e a resposta do programa conforme o resultado, indicando se ele acertou ou não essa letra, e claro, retirando uma tentativa (vida) em caso de erro.
+
+Depois de todo esse processamento, ``exibirPalavra(palavraSecreta, palavra, acertos)`` irá printar os acertos atualizados a cada palpite do usuário. Ela leva duas palavras como parâmetro pois usa a palavra sem acentos (utilizando ``removerAcentos(letra)``) para a comparação, e depois printa a palavra com acento.
 
 Por fim, ``jogarNovamente()`` será executado ao final de cada partida, perguntando ao usuário se ele pretende jogar mais uma vez, em caso de afirmação, o programa retorna ao menu inicial para que possa ser selecionado um modo, não será obrigatório repitir a dificuldade jogada anteriormente. Em caso de negação, o aplicativo será finalizado com a frase "Obrigado por jogar, até mais!.
