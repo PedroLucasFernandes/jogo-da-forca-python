@@ -7,14 +7,6 @@ def escolherPalavra(dificuldade, dicionario) :
     lista = dicionario[dificuldade]
     num = random.randint(0, len(lista) - 1)
     return lista[num]
-
-def removerAcentos(letra):
-    acentos = {
-        'á': 'a', 'é': 'e', 'í': 'i', 'ó': 'o', 'ú': 'u',
-        'â': 'a', 'ê': 'e', 'ô': 'o', 'à': 'a',
-        'ã': 'a', 'õ': 'o',
-        'ç': 'c'
-    }
     
     for item in acentos.keys():
         
