@@ -23,7 +23,7 @@ Caso a sua resposta não seja nenhum dos números previstos, uma mensagem de val
 
 Após inserir um valor válido, o programa irá imprimir um "_" para cada letra presente na palavra, e logo te pedirá para inserir uma letra.
 
-Confira como a aplicação retorna o seu resultado parcial, baseado nas suas tentativas:
+Confira como a aplicação retorna o seu resultado parcial, baseado nas suas tentativas: <br>
 ![Exemplo de uma partida em andamento](https://i.imgur.com/YEtMJhP.png)
 
 Ao fim da partida, o jogo te mostra uma mensagem de Parabéns, em caso de vitória. Se você perder a partida, aparecerá uma mensagem de Fim de Jogo, informando que suas tentativas acabaram, também será informado qual era a palavra correta. 
