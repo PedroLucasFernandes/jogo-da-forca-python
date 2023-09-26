@@ -16,7 +16,8 @@ Com isso, uma série de dificuldades aparecerão na tela, digite o número corre
 - 'Digite "1" para infantil'
 - 'Digite "2" para fácil'
 - 'Digite "3" para difícil'
-- 'Digite "4" para inglês (básico)'
+- 'Digite "4" para HARDCORE (apenas UMA tentativa)'
+- 'Digite "5" para inglês (básico)'
 
 Caso a sua resposta não seja nenhum dos números previstos, uma mensagem de valor inválido aparecerá, junto das instruções novamente. <br>
 ![Exemplo de valor inválido](https://i.imgur.com/yStVuDV.png)
@@ -26,7 +27,10 @@ Após inserir um valor válido, o programa irá imprimir um "_" para cada letra 
 Confira como a aplicação retorna o seu resultado parcial, baseado nas suas tentativas: <br>
 ![Exemplo de uma partida em andamento](https://i.imgur.com/YEtMJhP.png)
 
-Ao fim da partida, o jogo te mostra uma mensagem de Parabéns, em caso de vitória. Se você perder a partida, aparecerá uma mensagem de Fim de Jogo, informando que suas tentativas acabaram, também será informado qual era a palavra correta. 
+Ao fim da partida, o jogo te mostra uma mensagem de Parabéns, em caso de vitória. Se você perder a partida, aparecerá uma mensagem de Fim de Jogo, informando que suas tentativas acabaram, também será informado qual era a palavra correta.
+
+Se a dificuldade escolhida for a HARDCORE, teremos uma partida com apenas uma tentativa. Para não beirar o impossível, são palavras mais simples e o programa também irá mencionar qual o tema da palavra selecionada. Mas ainda sim é o modo mais difícil do jogo.
+![Exemplo de uma partida HARDCORE](https://i.imgur.com/I7VQXlv.png)
 
 Independente do seu resultado, temos a pergunta para jogar novamente, responda conforme a instrução abaixo para voltar ao menu de seleção de modo ou finalizar o programa.
 - Deseja jogar mais uma vez?
@@ -50,7 +54,11 @@ O ``main.py`` é responsável pela execução do programa, e ``funcoes.py`` arma
 ``palavras.json`` é o arquivo que contém o nosso dicionário, com todas as palavras possíveis para a partida, basicamente o dicionário é feito utilizando quatro keys, onde cada uma representa um modo de jogo (infantil, fácil, difícil, inglês), inseri uma lista de palavras para ser o valor de cada key.
 
 ### Explicando as funções
-Até então existem sete funções para ajudar no processamento do jogo, e elas contêm um nome bem autoexplicativo para facilitar o entendimento. ``escolherPalavra(dificuldade, dicionario)`` irá acessar o dicionário em ``palavras.json`` e acessa a key correspondente a dificuldade fornecida pelo usuário, depois seleciona uma palavra aleatória que representa aquele modo.
+Até então existem oito funções para ajudar no processamento do jogo, e elas contêm um nome bem autoexplicativo para facilitar o entendimento. ``escolherPalavra(dificuldade, dicionario)`` irá acessar o dicionário em ``palavras.json`` e acessa a key correspondente a dificuldade fornecida pelo usuário, depois seleciona uma palavra aleatória que representa aquele modo.
+
+O processamento dessa função é um pouco diferente caso estejamos no HARDCORE, já que não existe uma key específica desta dificuldade no dicionário, e sim várias que representam as possíveis categorias a serem escolhidas (``categorias = ["Fruta", "Feriado", "Animal", "País", "Esporte"]``). Então ela irá sortear um tema baseado nestas categorias para ser a key do dicionário, além de printar este tema no final para ajudar o usuário.
+
+Existe uma função específica apenas para o HARDCORE. ``modoHardcore()`` é responsável por alguns prints que só são feitos quando uma partida está nesta dificuldade, como este aqui: ``print(f'Você só tem {cor[0]}UMA{cor[-1]} tentativa.')``, além de outros.
 
 Para desconsiderar acentos utilizamos ``removerAcentos(letra)``. Por exemplo, se a palavra secreta for "ÓCULOS" e o jogador inserir a letra "O", o programa naturalmente não iria reconhecer o "Ó", dificultando na adivinhação e tornando a partida inviável, por isso utilizamos essa função.
 
