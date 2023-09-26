@@ -19,7 +19,8 @@ while repita :
                         'Digite "1" para infantil\n'
                         'Digite "2" para fácil\n'
                         'Digite "3" para difícil\n'
-                        'Digite "4" para inglês (básico)\n')
+                        'Digite "4" para HARDCORE (apenas UMA tentativa)\n'
+                        'Digite "5" para inglês (básico)\n')
 
     match dificuldade : 
         
@@ -29,18 +30,26 @@ while repita :
         
         case "3" : dificuldade = "difícil"
 
-        case "4" : dificuldade = "inglês"
+        case "4" : dificuldade = "HARDCORE"
+
+        case "5" : dificuldade = "inglês"
 
         case _:
             print(f"\n{funcoes.cor[0]}Valor inválido, insira um número correspondente: {funcoes.cor[-1]}")
             valido = False
 
     while valido :
-            
-        print(f'Você jogará no modo: {dificuldade}\n')
+
+        if dificuldade == "HARDCORE" :
+            funcoes.modoHardcore()
+            tentativas = 1
+        
+        else :
+            print(f'Você jogará no modo: {dificuldade}\n')
+
         palavraSecreta = funcoes.escolherPalavra(dificuldade, dicionario).upper()
         palavra = list(map(funcoes.removerAcentos, palavraSecreta))
-
+        
         for letra in range(0, len(palavra)) :
             acertos.append("_")
             print(acertos[letra], end = " ")

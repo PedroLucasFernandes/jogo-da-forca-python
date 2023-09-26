@@ -1,6 +1,6 @@
 {
     "infantil" : ["Casa", "Sol", "Bola", "Cão", "Flor", "Amigo",
-"Arco-íris", "Doce", "Gato", "Rio", "Lua", "Árvore", "Pato",
+"Arcoíris", "Doce", "Gato", "Rio", "Lua", "Árvore", "Pato",
 "Peixe", "Nuvem", "Rosa", "Riso", "Chuva", "Pássaro", "Estrela"],
 
     "fácil" : ["Amarelo", "Amiga", "Amor", "Ave", "Avião", "Avó", "Balão", "Bebê",
@@ -16,5 +16,20 @@
 
     "inglês" : ["Cat", "Dog", "Sun", "Moon", "Fish", "Tree", "Rain", "Star", "Bird",
 "Bear", "House", "Car", "Book", "Cake", "Apple", "Ship", "Mouse", "Lion", "Tiger",
-"Elephant", "Banana", "Monkey", "Rainbow", "Butterfly", "Carrot", "Dolphin", "Giraffe","Kangaroo"]
+"Elephant", "Banana", "Monkey", "Rainbow", "Butterfly", "Carrot", "Dolphin", "Giraffe","Kangaroo"],
+
+    "Fruta" : ["Maçã", "Banana", "Pera", "Uva", "Laranja", "Morango", "Abacaxi", "Melancia", "Manga",
+"Kiwi", "Limão", "Cereja", "Pêssego", "Ameixa", "Goiaba", "Framboesa", "Melão", "Abacate", "Caju", "Figo"],
+
+    "Feriado" :["Carnaval", "Páscoa", "Natal", "Réveillon", "Independência", "Tiradentes"],
+
+    "Animal" :["Elefante", "Girafa", "Macaco", "Leão", "Tigre", "Gato", "Cachorro", "Urso", "Panda", "Papagaio",
+"Zebra", "Cobra", "Baleia", "Pinguim", "Rinoceronte", "Puma", "Hipopótamo", "Peixe", "Pombo", "Camelo", "Coruja"],
+
+    "País" : ["Qatar", "Equador", "Senegal", "Holanda", "Inglaterra", "Irã", "Argentina", "México", "Polônia",
+"França", "Austrália", "Dinamarca", "Tunísia", "Espanha", "Alemanha", "Japão", "Bélgica", "Canadá", "Marrocos",
+"Croácia", "Brasil", "Sérvia", "Suíça", "Camarões", "Portugal", "Gana", "Uruguai"],
+
+    "Esporte" : ["Ciclismo", "Futebol", "MMA", "Natação", "Badminton", "Atletismo", "Golfe", "Rugby",
+"Beisebol", "Basquetebol", "Voleibol", "Boxe", "Tênis", "Corridas", "Hóquei", "Críquete"]
 }

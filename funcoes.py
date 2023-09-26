@@ -4,11 +4,24 @@ cor = ['\033[31m', '\033[32m', '\033[34m', '\033[33m', '\033[0m']
     #  vermelho     verde       azul       amarelo     fim
 
 def escolherPalavra(dificuldade, dicionario) :
-    lista = dicionario[dificuldade]
-    num = random.randint(0, len(lista) - 1)
-    return lista[num]
 
-def removerAcentos(letra):
+    if dificuldade == "HARDCORE" :
+
+        categorias = ["Fruta", "Feriado", "Animal", "País", "Esporte"]
+        tema = random.choice(categorias)
+        lista = dicionario[tema]
+        num = random.randint(0, len(lista) - 1)
+
+        print(f'O tema da palavra é: {tema}!')
+
+        return lista[num]
+    
+    else :
+        lista = dicionario[dificuldade]
+        num = random.randint(0, len(lista) - 1)
+        return lista[num]
+
+def removerAcentos(letra) :
     acentos = {
         'á': 'a', 'é': 'e', 'í': 'i', 'ó': 'o', 'ú': 'u',
         'â': 'a', 'ê': 'e', 'ô': 'o', 'à': 'a',
@@ -21,6 +34,11 @@ def removerAcentos(letra):
         if item.upper() == letra : letra = acentos[item].upper()
     
     return letra
+
+def modoHardcore() :
+    print(f'\nVocê jogará no modo: {cor[0]}HARDCORE!!!{cor[-1]}')
+    print(f'Você só tem {cor[0]}UMA{cor[-1]} tentativa.')
+    print("Iremos falar o tema da palavra para te dar uma mãozinha... Boa sorte!\n")
 
 def receberLetra() :
     while True :
