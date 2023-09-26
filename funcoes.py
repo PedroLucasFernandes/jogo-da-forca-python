@@ -6,20 +6,15 @@ cor = ['\033[31m', '\033[32m', '\033[34m', '\033[33m', '\033[0m']
 def escolherPalavra(dificuldade, dicionario) :
 
     if dificuldade == "HARDCORE" :
-
         categorias = ["Fruta", "Feriado", "Animal", "País", "Esporte"]
         tema = random.choice(categorias)
         lista = dicionario[tema]
-        num = random.randint(0, len(lista) - 1)
-
         print(f'O tema da palavra é: {tema}!')
-
-        return lista[num]
-    
     else :
         lista = dicionario[dificuldade]
-        num = random.randint(0, len(lista) - 1)
-        return lista[num]
+        
+    num = random.randint(0, len(lista) - 1)
+    return lista[num]
 
 def removerAcentos(letra) :
     acentos = {
