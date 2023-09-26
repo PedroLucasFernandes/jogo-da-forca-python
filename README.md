@@ -1,5 +1,5 @@
 # Jogo da Forca programado em Python
-Jogo da Forca para se divertir em quatro modos diferentes.
+Jogo da Forca para se divertir em cinco modos diferentes, incluindo inglês e hardcore.
 
 ***
 
